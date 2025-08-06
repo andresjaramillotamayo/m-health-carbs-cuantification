@@ -1,40 +1,20 @@
 ## m-health-carbs-cuantification
 Sistema para cuantificar carbohidratos a partir de imágenes usando segmentación y modelos de ML.
 
----
 
-## 📁 Estructura del repositorio
-
+```text
 📁 m-health-carbs-cuantification/
-├── Construcción_Sistema_Archivos.py
-│   # Script para crear la estructura de carpetas para entrenamiento
-│   # (train, test, validation)
-│
-├── UperNet_ConvNeX_Model.ipynb
-│   # Segmentación semántica con UperNet + ConvNeXt (config + evaluación)
-│
-├── mL_Model.ipynb
-│   # Modelos clásicos (Naive Bayes, SVM) para estimación/posprocesado
-│
-├── UNET_Model.ipynb
-│   # Segmentación con U-Net (backbone BEIT) y pipeline de entrenamiento
-│
+├── Construcción_Sistema_Archivos.py     # Script: crear estructura de carpetas (train/test/val)
+├── UperNet_ConvNeX_Model.ipynb          # UperNet + ConvNeXt (segmentación) 
+├── mL_Model.ipynb                       # ML clásico (Naive Bayes, SVM)
+├── UNET_Model.ipynb                     # U-Net + BEIT (train/eval)
 └── EstimacionGramos/
-    ├── _annotations.dataset.coco.json
-    │   # Anotaciones COCO del ATLAS (masks/bboxes/clases)
-    ├── coberturas_exportadas.xlsx
-    │   # Referencias del ATLAS (porción, equivalencias)
-    ├── Dataset_LookUpTable/
-    │   # Imágenes etiquetadas usadas para construir la LUT
-    ├── LookUpTable.csv
-    │   # Tabla de consulta (LUT) derivada de las referencias del ATLAS
-    ├── Test pipeline/
-    │   # Artefactos/ejecuciones del pipeline sobre el conjunto de test
-    ├── Utility_LUT.ipynb
-    │   # Notebook para generar/actualizar la LUT desde las fuentes
-    └── Validación/
-        # Notebook + resultados de validación del pipeline (última versión)
+    ├── _annotations.dataset.coco.json   # Anotaciones COCO ATLAS (masks/bboxes/clases)
+    ├── coberturas_exportadas.xlsx       # Referencias ATLAS (porciones/densidades/equivalencias)
+    ├── Dataset_LookUpTable/             # Imágenes etiquetadas para construir/validar la LUT
+    ├── LookUpTable.csv                  # LUT (área/volumen → gramos por clase)
+    ├── Test pipeline/                   # Ejecuciones del pipeline sobre dataset de test
+    ├── Utility_LUT.ipynb                # Generar/actualizar la LUT 
+    └── Validación/                      # ⏫ Notebook + resultados de validación (última versión)
 
-
-Nota / Note: La carpeta EstimacionGramos/Validación/ contiene la versión completa más
-reciente del pipeline (⏫).
+Nota: EstimacionGramos/Validación/ contiene la versión más reciente del pipeline (⏫).

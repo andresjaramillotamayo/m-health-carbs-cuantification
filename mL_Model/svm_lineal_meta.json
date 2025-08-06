@@ -1,0 +1,6 @@
+{
+  "kernel": "linear",
+  "C": 1,
+  "batch_size": 100,
+  "scikit_version": "1.5.0"
+}
